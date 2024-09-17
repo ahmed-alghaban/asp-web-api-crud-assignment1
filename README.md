@@ -29,77 +29,82 @@ The goal of this assignment is to help you practice building a basic User Manage
      - `201 Created` for successfully created users.
      - `404 Not Found` if the user is not found.
      - `400 Bad Request` for invalid inputs.
-```csharp
-   var builder = WebApplication.CreateBuilder(args);
 
-   var app = builder.Build();
-   
-   app.UseHttpsRedirection();
-   
-   List<User> users = new List<User>();
-   
-   // GET: /users => return all the users
-   app.MapGet("/users", (int page, int limit) =>
-   {
-       Console.WriteLine($"{page}");
-   
-       // pagination
-       int skip = (page - 1) * limit;
-       var paginatedUsers = users.Skip(skip).Take(limit);
-       return Results.Ok(paginatedUsers);
-   });
-   // users?page=2&limit=3
-   
-   // GET: /users/{id} => return single users
-   app.MapGet("/users/{id}", (Guid id) =>
-   {
-       var user = users.FirstOrDefault(user => user.Id == id);
-       return Results.Ok(user);
-   });
-   
-   // POST: /users => create the user
-   app.MapPost("/users", (User newUser) =>
-   {
-       // User already exist?
-       // FirstName and LastName can not be or null 
-       // is Email valid?
-   
-       newUser.Id = Guid.NewGuid();
-       newUser.CreatedAt = DateTime.Now;
-       users.Add(newUser);
-       return Results.Created("user is created", newUser);
-   });
-   
-   // PUT: /users/{id} => update the user
-   app.MapPut("/users/{id}", (Guid id, User updatedUser) =>
-   {
-       var user = users.FirstOrDefault(user => user.Id == id);
-       if (user == null)
-       {
-           return Results.NotFound($"User with this id {id} does not exists.");
-       }
-       user.FirstName = updatedUser.FirstName ?? user.FirstName;
-       user.LastName = updatedUser.LastName ?? user.LastName;
-       user.Email = updatedUser.Email ?? user.Email;
-   
-       return Results.Ok(user);
-   });
-   
-   // DELETE: /users/{id} => delete the user
-   app.MapDelete("/users/{id}", () =>
-   {
-       return "deleted single user";
-   });
-   
-   app.Run();
-   
-   class User
-   {
-       public Guid Id { get; set; }
-       public string? FirstName { get; set; }
-       public string? LastName { get; set; }
-       public string? Email { get; set; }
-       public DateTime CreatedAt { get; set; }
-   }
+```csharp
+      var builder = WebApplication.CreateBuilder(args);
+
+var app = builder.Build();
+
+app.UseHttpsRedirection();
+
+List<User> users = new List<User>();
+
+// GET: /users => return all the users
+app.MapGet("/users", (HttpRequest request) =>
+{
+    // Read query parameters from the request
+    int page = int.TryParse(request.Query["page"], out int parsedPage) ? parsedPage : 1;
+    int limit = int.TryParse(request.Query["limit"], out int parsedLimit) ? parsedLimit : 5;
+
+    // Ensure page and limit are positive
+
+    // pagination
+    int skip = (page - 1) * limit;
+    var paginatedUsers = users.Skip(skip).Take(limit);
+    return Results.Ok(paginatedUsers);
+});
+// users?page=2&limit=3
+
+// GET: /users/{id} => return single users
+app.MapGet("/users/{id}", (Guid id) =>
+{
+    var user = users.FirstOrDefault(user => user.Id == id);
+    return Results.Ok(user);
+});
+
+// POST: /users => create the user
+app.MapPost("/users", (User newUser) =>
+{
+    // User already exist?
+    // FirstName and LastName can not be or null 
+    // is Email valid?
+
+    newUser.Id = Guid.NewGuid();
+    newUser.CreatedAt = DateTime.Now;
+    users.Add(newUser);
+    return Results.Created("user is created", newUser);
+});
+
+// PUT: /users/{id} => update the user
+app.MapPut("/users/{id}", (Guid id, User updatedUser) =>
+{
+    var user = users.FirstOrDefault(user => user.Id == id);
+    if (user == null)
+    {
+        return Results.NotFound($"User with this id {id} does not exists.");
+    }
+    user.FirstName = updatedUser.FirstName ?? user.FirstName;
+    user.LastName = updatedUser.LastName ?? user.LastName;
+    user.Email = updatedUser.Email ?? user.Email;
+
+    return Results.Ok(user);
+});
+
+// DELETE: /users/{id} => delete the user
+app.MapDelete("/users/{id}", () =>
+{
+    return "deleted single user";
+});
+
+app.Run();
+
+class User
+{
+    public Guid Id { get; set; }
+    public string? FirstName { get; set; }
+    public string? LastName { get; set; }
+    public string? Email { get; set; }
+    public DateTime CreatedAt { get; set; }
+}
 
 ```
