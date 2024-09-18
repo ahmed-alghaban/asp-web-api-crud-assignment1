@@ -10,9 +10,9 @@ namespace NsUser
     public string? Email { get; set; }
     public DateTime CreatedAt { get; set; }
 
-    public User (Guid id , string firstName, string lastName, string email){
+    public User ( string firstName, string lastName, string email){
 
-      Id = id;
+      Id = Guid.NewGuid();
       FirstName = firstName;
       LastName = lastName;
       Email = email;
