@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bxlfa\\OneDrive\\المستندات\\sda\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj": {}
+    "C:\\Users\\walee\\Desktop\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bxlfa\\OneDrive\\المستندات\\sda\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj": {
+    "C:\\Users\\walee\\Desktop\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bxlfa\\OneDrive\\المستندات\\sda\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj",
+        "projectUniqueName": "C:\\Users\\walee\\Desktop\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj",
         "projectName": "userManagement",
-        "projectPath": "C:\\Users\\bxlfa\\OneDrive\\المستندات\\sda\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj",
-        "packagesPath": "C:\\Users\\bxlfa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bxlfa\\OneDrive\\المستندات\\sda\\asp-web-api-crud-assignment1\\userManagement\\obj\\",
+        "projectPath": "C:\\Users\\walee\\Desktop\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj",
+        "packagesPath": "C:\\Users\\walee\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\walee\\Desktop\\asp-web-api-crud-assignment1\\userManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bxlfa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\walee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
