@@ -19,5 +19,11 @@ app.MapGet("/users", () =>
 
 });
 
+app.MapPost("/users" , (User newUser){
+
+    users.Add(newUser);
+    return Results.Created();
+});
+
 app.Run();
 
