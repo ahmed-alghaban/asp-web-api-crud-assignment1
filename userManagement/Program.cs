@@ -16,10 +16,18 @@ List<User> users = new List<User>();
 
 app.MapGet("/users", () =>
 {
-
+    return users;
 });
 
-app.MapPost("/users" , (User newUser){
+app.MapGet("/users/{Id}", (Guid id
+) =>
+{
+    var user = users.FirstOrDefault(user => user.Id == id);
+    return Results.Ok(user);
+});
+
+app.MapPost("/users", (User newUser) =>
+{
 
     users.Add(newUser);
     return Results.Created();
