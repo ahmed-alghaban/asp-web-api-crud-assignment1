@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ahmedalghabban/Desktop/SDA - INTEGRIFY Internship/API/Week4/asp-web-api-crud-assignment1/userManagement/userManagement.csproj": {}
+    "C:\\Users\\bxlfa\\OneDrive\\المستندات\\sda\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj": {}
   },
   "projects": {
-    "/Users/ahmedalghabban/Desktop/SDA - INTEGRIFY Internship/API/Week4/asp-web-api-crud-assignment1/userManagement/userManagement.csproj": {
+    "C:\\Users\\bxlfa\\OneDrive\\المستندات\\sda\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmedalghabban/Desktop/SDA - INTEGRIFY Internship/API/Week4/asp-web-api-crud-assignment1/userManagement/userManagement.csproj",
+        "projectUniqueName": "C:\\Users\\bxlfa\\OneDrive\\المستندات\\sda\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj",
         "projectName": "userManagement",
-        "projectPath": "/Users/ahmedalghabban/Desktop/SDA - INTEGRIFY Internship/API/Week4/asp-web-api-crud-assignment1/userManagement/userManagement.csproj",
-        "packagesPath": "/Users/ahmedalghabban/.nuget/packages/",
-        "outputPath": "/Users/ahmedalghabban/Desktop/SDA - INTEGRIFY Internship/API/Week4/asp-web-api-crud-assignment1/userManagement/obj/",
+        "projectPath": "C:\\Users\\bxlfa\\OneDrive\\المستندات\\sda\\asp-web-api-crud-assignment1\\userManagement\\userManagement.csproj",
+        "packagesPath": "C:\\Users\\bxlfa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bxlfa\\OneDrive\\المستندات\\sda\\asp-web-api-crud-assignment1\\userManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ahmedalghabban/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\bxlfa\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
