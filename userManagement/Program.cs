@@ -48,8 +48,10 @@ app.MapPut("/users/{id}" , (Guid id, User updatedUser) => {
     return Results.Ok(user);
 });
 
-app.MapDelete("/users{id}" , () => {
+app.MapDelete("/users/{id}" , (Guid id) => {
 
+    User user = users.FirstOrDefault(foundUser => foundUser.Id == id);
+    users.Remove(user);
     return "deleted a single user";
 });
 
