@@ -33,5 +33,25 @@ app.MapPost("/users", (User newUser) =>
     return Results.Created();
 });
 
+app.MapPut("/users/{id}" , (Guid id, User updatedUser) => {
+
+    var user = users.FirstOrDefault(foundUser => foundUser.Id == id);
+    if (user == null)
+    {
+        return Results.NotFound($"Error 404 , User with the Id {id} does not Exist");
+    }
+
+        user.FirstName = updatedUser.FirstName ?? user.FirstName;
+        user.LastName = updatedUser.LastName ?? user.LastName;
+        user.Email = updatedUser.Email ?? user.Email;
+
+    return Results.Ok(user);
+});
+
+app.MapDelete("/users{id}" , () => {
+
+    return "deleted a single user";
+});
+
 app.Run();
 
